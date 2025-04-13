@@ -1,0 +1,30 @@
+#include <graphics.h>
+#include <conio.h>
+#include <stdio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    int xCenter, yCenter, startAngle, endAngle, xRadius, yRadius;
+
+    printf("Enter xCenter and yCenter: ");
+    scanf("%d %d", &xCenter, &yCenter);
+
+    printf("Enter startAngle and endAngle: ");
+    scanf("%d %d", &startAngle, &endAngle);
+
+    printf("Enter xRadius and yRadius: ");
+    scanf("%d %d", &xRadius, &yRadius);
+
+    setbkcolor(BLUE);
+    cleardevice();
+    outtextxy(47, 55, "ELLIPSE");
+
+    // Draw the ellipse
+    ellipse(xCenter, yCenter, startAngle, endAngle, xRadius, yRadius);
+
+    getch();
+    closegraph();
+    return 0;
+}
