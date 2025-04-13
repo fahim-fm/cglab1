@@ -1,0 +1,25 @@
+#include <graphics.h>
+#include <conio.h>
+#include <stdio.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TC\\BGI"); // Make sure this path exists
+
+    int x_initial, y_initial, x_final, y_final;
+
+    printf("Please enter the initial coordinates of the line (x y): ");
+    scanf("%d %d", &x_initial, &y_initial);
+
+    printf("Now, enter the final coordinates of the line (x y): ");
+    scanf("%d %d", &x_final, &y_final);
+
+    setbkcolor(BLUE);
+    cleardevice();
+    outtextxy(35, 55, "Line");
+    line(x_initial, y_initial, x_final, y_final);
+
+    getch();
+    closegraph();
+    return 0;
+}
